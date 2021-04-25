@@ -72,8 +72,8 @@ def arg_parse():
 
 if __name__ == '__main__':
     cfgfile = "cfg/yolov3.cfg"
-    weightsfile = "yolov3.weights"
-    num_classes = 80
+    weightsfile = "newYolov3.weights"
+    num_classes = 1
 
     args = arg_parse()
     confidence = float(args.confidence)
@@ -145,7 +145,7 @@ if __name__ == '__main__':
             output[:,[2,4]] *= frame.shape[0]
 
             
-            classes = load_classes('data/coco.names')
+            classes = load_classes('data/drone.names')
             colors = pkl.load(open("pallete", "rb"))
             
             list(map(lambda x: write(x, orig_im), output))
